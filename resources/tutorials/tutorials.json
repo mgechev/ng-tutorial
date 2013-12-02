@@ -13,6 +13,6 @@
 		"description": "Awesome desc",
 		"level": "beginners",
 		"tags": ["controllers", "directives", "partials"],
-		"steps": ["1", "2"]
+		"steps": ["markup-controller", "controller-logic", "service"]
 	}
 ]
