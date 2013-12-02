@@ -157,3 +157,21 @@ body {
 .body-dark .table-hover tbody tr:hover > td, .table-hover tbody tr:hover > th {
   background-color: #444;
 }
+
+.preloader.ng-hide-add, .preloader.ng-hide-remove {
+  -webkit-transition:all linear 0.2s;
+  -moz-transition:all linear 0.2s;
+  -o-transition:all linear 0.2s;
+  transition:all linear 0.2s;
+  display:block!important;
+}
+
+.preloader.ng-hide-add.ng-hide-add-active,
+.preloader.ng-hide-remove {
+  opacity:0;
+}
+
+.preloader.ng-hide-add,
+.preloader.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}

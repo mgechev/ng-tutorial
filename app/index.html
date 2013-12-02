@@ -30,32 +30,6 @@
         <ul class="nav" role="menu">
             <li>
                 <a href="#select-tutorial" role="button" data-toggle="modal" href="#">Tutorials</a>
-                <div id="select-tutorial" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3>Tutorials List</h3>
-                  </div>
-                  <div class="modal-body">
-                    <form class="form-search">
-                      <div class="input-append">
-                        <input type="text" class="span2 search-query" style="width: 425px" ng-model="tutorialFilter">
-                        <button type="submit" class="btn">Search</button>
-                      </div>
-                    </form>
-                    <table class="table table-hover">
-                        <tr ng-repeat="tutorial in tutorials | filter: tutorialFilter" class="tutorial-select-row" data-dismiss="modal">
-                            <td ng-click="startTutorial(tutorial.id)">
-                                <h5 ng-bind="tutorial.title"></h5>
-                                <p class="muted" ng-bind="tutorial.description"></p>
-                                <div ng-show="tutorial.tags.length > 0">
-                                    <i class="icon-tags"></i>
-                                    <span class="tutorial-tag" ng-repeat="tag in tutorial.tags" ng-bind="tag"></span>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                  </div>
-                </div>
             </li>
             <li><a href=""><div class="dark-skin" tut-toggle-skin="dark" ng-click="setSkin('dark')"></div></a></li>
             <li><a href=""><div class="light-skin" tut-toggle-skin="light" ng-click="setSkin('light')"></div></a></li>
@@ -77,19 +51,6 @@
                     <button ng-class="( skin=='dark' ) ? 'btn-inverse' : ''" class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>
                 </div>
                 <button class="btn" ng-show="tutorial" href="#view-solution-confirm" role="button" data-toggle="modal">View Solution</button>
-                <div id="view-solution-confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="myModalLabel">Lost of changes</h3>
-                  </div>
-                  <div class="modal-body">
-                    <p>All your changes will be lost, are you sure you want to continue?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
-                    <button class="btn btn-primary" data-dismiss="modal" ng-click="viewSolution()">Yes</button>
-                  </div>
-                </div>
             </div>
         </div>
         <div class="span6">
@@ -105,12 +66,54 @@
       </div>
     </div>
 
+    <div id="select-tutorial" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Tutorials List</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-search">
+          <div class="input-append">
+            <input type="text" class="span2 search-query" style="width: 425px" ng-model="tutorialFilter">
+            <button type="submit" class="btn">Search</button>
+          </div>
+        </form>
+        <table class="table table-hover">
+            <tr ng-repeat="tutorial in tutorials | filter: tutorialFilter" class="tutorial-select-row" data-dismiss="modal">
+                <td ng-click="startTutorial(tutorial.id)">
+                    <h5 ng-bind="tutorial.title"></h5>
+                    <p class="muted" ng-bind="tutorial.description"></p>
+                    <div ng-show="tutorial.tags.length > 0">
+                        <i class="icon-tags"></i>
+                        <span class="tutorial-tag" ng-repeat="tag in tutorial.tags" ng-bind="tag"></span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="view-solution-confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Lost of changes</h3>
+      </div>
+      <div class="modal-body">
+        <p>All your changes will be lost, are you sure you want to continue?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+        <button class="btn btn-primary" data-dismiss="modal" ng-click="viewSolution()">Yes</button>
+      </div>
+    </div>
+
     <script src="bower_components/ace-builds/src-min/ace.js"></script>
     <script src="bower_components/ace-builds/src-min/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
     <script src="bower_components/ace-builds/src-min/mode-html.js" type="text/javascript" charset="utf-8"></script>
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-animate.min.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
