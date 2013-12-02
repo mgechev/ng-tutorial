@@ -115,6 +115,8 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   height: 100%;
   border-radius: 5px;
+  opacity: 0.975;
+  z-index: 0;
 }
 
 .module-container h3 {
@@ -135,4 +137,23 @@ body {
 
 .dropdown-menu-dark:after {
   visibility: hidden;
+}
+
+.tutorial-tag {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 0.8em;
+  color: #999;
+  margin-left: 5px;
+}
+
+.tutorial-select-row {
+  cursor: pointer;
+}
+
+.body-dark .table-hover tbody tr:hover > td, .table-hover tbody tr:hover > th {
+  background-color: #444;
 }

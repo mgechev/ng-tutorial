@@ -12,10 +12,10 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/bootstrap.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bower_components/bootstrap-sass/bootstrap-responsive-2.3.2.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
   <body ng-app="ngTutorialApp" ng-controller="MainCtrl">
@@ -29,10 +29,33 @@
         <a class="brand" href="#"><img src="images/ng-logo-small.png" /> ng-tutorial</a>
         <ul class="nav" role="menu">
             <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorials</a>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="tutorial in tutorials"><a href="#" ng-bind="tutorial.title" ng-click="startTutorial(tutorial.id)"></a></li>
-                </ul>
+                <a href="#select-tutorial" role="button" data-toggle="modal" href="#">Tutorials</a>
+                <div id="select-tutorial" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3>Tutorials List</h3>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-search">
+                      <div class="input-append">
+                        <input type="text" class="span2 search-query" style="width: 425px" ng-model="tutorialFilter">
+                        <button type="submit" class="btn">Search</button>
+                      </div>
+                    </form>
+                    <table class="table table-hover">
+                        <tr ng-repeat="tutorial in tutorials | filter: tutorialFilter" class="tutorial-select-row" data-dismiss="modal">
+                            <td ng-click="startTutorial(tutorial.id)">
+                                <h5 ng-bind="tutorial.title"></h5>
+                                <p class="muted" ng-bind="tutorial.description"></p>
+                                <div ng-show="tutorial.tags.length > 0">
+                                    <i class="icon-tags"></i>
+                                    <span class="tutorial-tag" ng-repeat="tag in tutorial.tags" ng-bind="tag"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                  </div>
+                </div>
             </li>
             <li><a href=""><div class="dark-skin" tut-toggle-skin="dark" ng-click="setSkin('dark')"></div></a></li>
             <li><a href=""><div class="light-skin" tut-toggle-skin="light" ng-click="setSkin('light')"></div></a></li>
@@ -53,7 +76,7 @@
                 <div class="btn-group">
                     <button ng-class="( skin=='dark' ) ? 'btn-inverse' : ''" class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>
                 </div>
-                <button class="btn" ng-show="tutorial" href="#view-solution-confirm" role="button" class="btn" data-toggle="modal">View Solution</button>
+                <button class="btn" ng-show="tutorial" href="#view-solution-confirm" role="button" data-toggle="modal">View Solution</button>
                 <div id="view-solution-confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
