@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ngTutorialApp')
-  .controller('TutorialCtrl', function ($sce, $scope, TutorialsCollection, StepsCollection, showdownFilter) {
+  .controller('TutorialCtrl', function ($sce, $scope, $location, TutorialsCollection, StepsCollection, showdownFilter) {
 
     function setValue(value) {
       $scope.stepContent = $sce.trustAsHtml(showdownFilter(value));
@@ -10,6 +10,17 @@ angular.module('ngTutorialApp')
     $scope.$on('ui.tutorial-change', function (evnt, data) {
       $scope.tutorial = TutorialsCollection.getTutorialById(data.tutorial);
       $scope.gotoStep($scope.tutorial.steps[0]);
+      $location.search({ tutorial: data.tutorial });
+    });
+
+    $scope.$on('ui.ready', function () {
+      var search = $location.search() || {},
+          tutorial = search.tutorial,
+          step = search.step;
+      $scope.tutorial = TutorialsCollection.getTutorialById(tutorial);
+      if ($scope.tutorial) {
+        $scope.gotoStep(step || $scope.tutorial.steps[0]);
+      }
     });
 
     setValue('###Select task from the navbar above');
@@ -21,6 +32,9 @@ angular.module('ngTutorialApp')
         parentScope.js = data.js || parentScope.js;
         parentScope.html = data.html || parentScope.html;
         setValue(data.task);
+        var search = $location.search();
+        search.step = step;
+        $location.search(search);
       });
       currentStep = step;
     };
@@ -31,4 +45,5 @@ angular.module('ngTutorialApp')
         $scope.$emit('ui.view-solution', data);
       });
     };
+
   });

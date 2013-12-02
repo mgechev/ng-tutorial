@@ -6,6 +6,7 @@ angular.module('ngTutorialApp')
     TutorialsCollection.getTutorials()
     .then(function (data) {
       $scope.ready = true;
+      $scope.$broadcast('ui.ready');
       $scope.tutorials = data;
     });
 
