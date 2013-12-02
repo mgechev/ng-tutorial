@@ -18,7 +18,7 @@ angular.module('ngTutorialApp')
           if (oldValue !== value) {
             scope.value = value;
             oldValue = value;
-            if (!scope.$$phase) {
+            if (!scope.$$phase && !scope.$root.$$phase) {
               scope.$apply();
             }
           }

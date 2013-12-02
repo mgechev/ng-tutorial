@@ -36,14 +36,14 @@
         </ul>
       </div>
     </div>
-    <div class="bs-docs-grid">
+    <div class="bs-docs-grid" ng-controller="TutorialCtrl">
       <div class="row-fluid show-grid">
         <div class="span6">
             <div class="module-container">
                 <h3>JavaScript</h3>
                 <div tut-editor="javascript" tut-value="js"></div>
             </div>
-            <div ng-controller="TutorialCtrl" class="module-container">
+            <div class="module-container">
                 <h3>Tutorial</h3>
                 <div id="step-content" class="task-content span6" ng-bind-html="stepContent">
                 </div>
@@ -51,6 +51,7 @@
                     <button ng-class="( skin=='dark' ) ? 'btn-inverse' : ''" class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>
                 </div>
                 <button class="btn" ng-show="tutorial" data-target="#view-solution-confirm" role="button" data-toggle="modal">View Solution</button>
+
             </div>
         </div>
         <div class="span6">
@@ -64,6 +65,19 @@
             </div>
         </div>
       </div>
+        <div id="view-solution-confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Lost of changes</h3>
+          </div>
+          <div class="modal-body">
+            <p>All your changes will be lost, are you sure you want to continue?</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+            <button class="btn btn-primary" data-dismiss="modal" ng-click="viewSolution()">Yes</button>
+          </div>
+        </div>
     </div>
 
     <div id="select-tutorial" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -90,20 +104,6 @@
                 </td>
             </tr>
         </table>
-      </div>
-    </div>
-
-    <div id="view-solution-confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Lost of changes</h3>
-      </div>
-      <div class="modal-body">
-        <p>All your changes will be lost, are you sure you want to continue?</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
-        <button class="btn btn-primary" data-dismiss="modal" ng-click="viewSolution()">Yes</button>
       </div>
     </div>
 

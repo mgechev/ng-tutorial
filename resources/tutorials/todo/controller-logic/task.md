@@ -35,4 +35,6 @@ But we need a way to toggle the item completion...
 
 * Add a checkbox in the list item which is two-way binded to the todo's completed value.
 
+* One last step! As you remember we mentioned that your app might break if you have duplicates in the collection you iterate over with `ng-repeat`. To prevent this you can use: `track by $index` as suffix. This will tell the `ng-repeat` directive to not track the items in the collection by value but by their index instead.
+
 Aaand it seems that we are done! When you click on the checkbox you should see line-through the associated item.

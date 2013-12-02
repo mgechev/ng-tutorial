@@ -10,6 +10,6 @@ li {
 	<input type="text" ng-model="filterValue"><br />
 	<input type="text" ng-model="currentTodo"><button ng-click="addTodo()">Add todo</button>
 	<ul>
-		<li ng-repeat="todo in todos | filter: filterValue" ng-class="(todo.completed) ? 'completed': ''"><input type="checkbox" ng-model="todo.completed" /><button ng-click="removeTodo($index)">x</button>{{todo.label}}</li>
+		<li ng-repeat="todo in todos track by $index | filter: filterValue" ng-class="(todo.completed) ? 'completed': ''"><input type="checkbox" ng-model="todo.completed" /><button ng-click="removeTodo($index)">x</button>{{todo.label}}</li>
 	</ul>
 </div>

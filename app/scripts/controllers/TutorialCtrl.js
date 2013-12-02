@@ -23,7 +23,6 @@ angular.module('ngTutorialApp')
       }
     });
 
-    setValue('###Select task from the navbar above');
     var currentStep = -1;
     $scope.gotoStep = function (step) {
       StepsCollection.getStepTask($scope.tutorial.id, step)
@@ -46,4 +45,5 @@ angular.module('ngTutorialApp')
       });
     };
 
+    setValue('###Select task from the navbar above');
   });
