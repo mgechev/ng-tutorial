@@ -16,10 +16,17 @@ angular.module('ngTutorialApp')
         editor.on('change', function () {
           var value = editor.getValue();
           if (oldValue !== value) {
-            scope.$apply(function () {
-              scope.value = value;
-              oldValue = value;
-            });
+            scope.value = value;
+            oldValue = value;
+            if (!scope.$$phase) {
+              scope.$apply();
+            }
+          }
+        });
+        scope.$watch('value', function (value) {
+          var current = editor.getValue(value);
+          if (current !== value) {
+            editor.setValue(value);
           }
         });
         editor.setTheme('ace/theme/chrome');

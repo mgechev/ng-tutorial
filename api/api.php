@@ -12,8 +12,8 @@ switch ($action) {
   case 'get_step':
     $response = getTutorialStep($_POST['tutorial_id'], $_POST['step_id']);
   break;
-  case 'get_step_source':
-    $response = getStepSource($_POST['tutorial_id']);
+  case 'get_step_solution':
+    $response = getStepSolution($_POST['tutorial_id'], $_POST['step_id']);
   break;
   case 'refresh':
     echo getPageSource($_POST['html'], $_POST['js']);

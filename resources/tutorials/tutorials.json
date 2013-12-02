@@ -1,5 +1,11 @@
 [
 	{
+		"id": "partials",
+		"title": "Have fun with templates",
+		"description": "In this chapter you will be introduced to the AngularJS partials",
+		"steps": ["bootstrap", "evaluate", "iterate", "use-filters"]
+	},
+	{
 		"id": "todo",
 		"title": "Create a TODO list",
 		"description": "Awesome desc",
