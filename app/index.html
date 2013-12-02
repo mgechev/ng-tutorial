@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/bootstrap.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bower_components/bootstrap-sass/bootstrap-responsive-2.3.2.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+</head>
+  <body ng-app="ngTutorialApp" ng-controller="MainCtrl">
+
+    <div class="preloader" ng-hide="ready">
+        <h1>Loading...</h1>
+    </div>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">ng-tutorial</a>
+        <ul class="nav" role="menu">
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tasks</a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="tutorial in tutorials"><a href="#" ng-bind="tutorial.title" ng-click="startTutorial(tutorial.id)"></a></li>
+                </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bs-docs-grid">
+      <div class="row-fluid show-grid">
+        <div class="span6">
+            <div>
+                <h3>JavaScript</h3>
+                <div tut-editor="javascript" tut-value="js"></div>
+            </div>
+            <div ng-controller="TutorialCtrl">
+                <h3>Task</h3>
+                <div id="step-content" class="task-content span6" ng-bind-html="stepContent">
+                </div>
+                <div class="btn-group">
+                    <button class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>
+                </div>
+            </div>
+        </div>
+        <div class="span6">
+            <div>
+                <h3>HTML</h3>
+                <div tut-editor="html" tut-value="html"></div>
+            </div>
+            <div>
+                <h3>Result</h3>
+                <div tut-result tut-result-js="js" tut-result-html="html"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/ace-builds/src-min/ace.js"></script>
+    <script src="bower_components/ace-builds/src-min/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+    <script src="bower_components/ace-builds/src-min/mode-html.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+        <script src="bower_components/showdown/compressed/showdown.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/MainCtrl.js"></script>
+        <script src="scripts/directives/tutEditor.js"></script>
+        <script src="scripts/directives/tutUpdateResult.js"></script>
+        <script src="scripts/services/Config.js"></script>
+        <script src="scripts/services/TutorialsCollection.js"></script>
+        <script src="scripts/services/StepsCollection.js"></script>
+        <script src="scripts/services/Req.js"></script>
+        <script src="scripts/filters/showdown.js"></script>
+        <script src="scripts/controllers/TutorialCtrl.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

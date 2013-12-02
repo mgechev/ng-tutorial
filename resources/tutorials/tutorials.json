@@ -1,0 +1,8 @@
+[
+	{
+		"id": "todo",
+		"title": "Create a TODO list",
+		"description": "Awesome desc",
+		"steps": ["1", "2"]
+	}
+]
