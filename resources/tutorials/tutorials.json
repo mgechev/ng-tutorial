@@ -21,6 +21,6 @@
 		"description": "This tutorial introduce the concept of isolated scope",
 		"level": "intermediate",
 		"tags": ["directives", "scope", "isolated"],
-		"steps": ["markup-controller", "controller-logic", "service"]
+		"steps": ["bind-attribute", "bind-property", "bind-method"]
 	}
 ]
