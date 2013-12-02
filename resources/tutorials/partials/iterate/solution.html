@@ -1,0 +1,5 @@
+<div ng-app ng-init="languages = ['JavaScript', 'Go', 'Python', 'Perl', 'Java']">
+	<ul>
+		<li ng-repeat="language in languages">{{ language + ' is number ' + ($index + 1) }}</li>
+	</ul>
+</div>

@@ -1,0 +1,7 @@
+<div ng-app ng-init="languages = ['JavaScript', 'Go', 'Python', 'Perl', 'Java']">
+	Filter: <input type="text" ng-model="filterLanguage" /> <br>
+	<input type="text" ng-model="currentLanguage" /><button ng-click="languages.push(currentLanguage); currentLanguage = undefined;">Add</button>
+	<ul>
+		<li ng-repeat="language in languages | filter: filterLanguage"><button ng-click="languages.splice($index, 1)">x</button> {{ language + ' is number ' + ($index + 1) }}</li>
+	</ul>
+</div>

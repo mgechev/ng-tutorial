@@ -3,12 +3,16 @@
 		"id": "partials",
 		"title": "Have fun with templates",
 		"description": "In this chapter you will be introduced to the AngularJS partials",
-		"steps": ["bootstrap", "evaluate", "iterate", "use-filters"]
+		"level": "beginners",
+		"tags": ["partials"],
+		"steps": ["bootstrap", "expressions", "iterate", "filters-binding"]
 	},
 	{
 		"id": "todo",
 		"title": "Create a TODO list",
 		"description": "Awesome desc",
+		"level": "beginners",
+		"tags": ["controllers", "directives", "partials"],
 		"steps": ["1", "2"]
 	}
 ]

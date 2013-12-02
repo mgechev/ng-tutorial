@@ -26,7 +26,7 @@
 
     <div class="navbar">
       <div class="navbar-inner">
-        <a class="brand" href="#">ng-tutorial</a>
+        <a class="brand" href="#"><img src="images/ng-logo-small.png" /> ng-tutorial</a>
         <ul class="nav" role="menu">
             <li>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorials</a>
@@ -39,14 +39,14 @@
         </ul>
       </div>
     </div>
-    <div class="bs-docs-grid main-content">
+    <div class="bs-docs-grid">
       <div class="row-fluid show-grid">
         <div class="span6">
-            <div>
+            <div class="module-container">
                 <h3>JavaScript</h3>
                 <div tut-editor="javascript" tut-value="js"></div>
             </div>
-            <div ng-controller="TutorialCtrl">
+            <div ng-controller="TutorialCtrl" class="module-container">
                 <h3>Tutorial</h3>
                 <div id="step-content" class="task-content span6" ng-bind-html="stepContent">
                 </div>
@@ -70,11 +70,11 @@
             </div>
         </div>
         <div class="span6">
-            <div>
+            <div class="module-container">
                 <h3>HTML</h3>
                 <div tut-editor="html" tut-value="html"></div>
             </div>
-            <div>
+            <div class="module-container">
                 <h3>Result</h3>
                 <div tut-result tut-result-js="js" tut-result-html="html"></div>
             </div>
