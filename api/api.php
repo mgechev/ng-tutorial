@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 require_once 'tutorials.php';
 require_once 'code_loader.php';
 

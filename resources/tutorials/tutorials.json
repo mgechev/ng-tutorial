@@ -3,16 +3,24 @@
 		"id": "partials",
 		"title": "Have fun with templates",
 		"description": "In this chapter you will be introduced to the AngularJS partials",
-		"level": "beginners",
+		"level": "beginner",
 		"tags": ["partials"],
 		"steps": ["bootstrap", "expressions", "iterate", "filters-binding"]
 	},
 	{
 		"id": "todo",
 		"title": "Create a TODO list",
-		"description": "Awesome desc",
-		"level": "beginners",
+		"description": "This tutorial introduce the concepts of filters, controllers, modules, services during the development process of a simple TODO application.",
+		"level": "beginner",
 		"tags": ["controllers", "directives", "partials"],
+		"steps": ["markup-controller", "controller-logic", "service"]
+	},
+	{
+		"id": "isolated-scope",
+		"title": "Isolated scope",
+		"description": "This tutorial introduce the concept of isolated scope",
+		"level": "intermediate",
+		"tags": ["directives", "scope", "isolated"],
 		"steps": ["markup-controller", "controller-logic", "service"]
 	}
 ]

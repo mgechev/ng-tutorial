@@ -96,7 +96,23 @@
             <tr ng-repeat="tutorial in tutorials | filter: tutorialFilter" class="tutorial-select-row" data-dismiss="modal">
                 <td ng-click="startTutorial(tutorial.id)">
                     <h5 ng-bind="tutorial.title"></h5>
-                    <p class="muted" ng-bind="tutorial.description"></p>
+                    <p class="muted">
+                        <span ng-bind="tutorial.description"></span>
+                        <div class="muted">
+                            <span style="font-size: 0.8em;">Level:</span>
+                            <span ng-switch="tutorial.level">
+                                <span ng-switch-when="beginner">
+                                    <i class="icon-star-empty"></i>
+                                </span>
+                                <span ng-switch-when="intermediate">
+                                    <i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+                                </span>
+                                <span ng-switch-when="advanced">
+                                    <i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </p>
                     <div ng-show="tutorial.tags.length > 0">
                         <i class="icon-tags"></i>
                         <span class="tutorial-tag" ng-repeat="tag in tutorial.tags" ng-bind="tag"></span>
