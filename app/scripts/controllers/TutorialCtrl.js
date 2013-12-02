@@ -18,8 +18,8 @@ angular.module('ngTutorialApp')
       StepsCollection.getStepTask($scope.tutorial.id, step)
       .then(function (data) {
         var parentScope = $scope.$parent;
-        parentScope.js = data.js;
-        parentScope.html = data.html;
+        parentScope.js = data.js || parentScope.js;
+        parentScope.html = data.html || parentScope.html;
         setValue(data.task);
       });
       currentStep = step;

@@ -5,6 +5,7 @@ angular.module('ngTutorialApp')
 
     function applyDarkSkin() {
       $(document.body).addClass('body-dark');
+      $('.dropdown-menu').addClass('dropdown-menu-dark');
       $('.navbar').addClass('navbar-inverse');
       $('.btn').addClass('btn-inverse');
       $('.modal').addClass('modal-dark');
@@ -16,6 +17,7 @@ angular.module('ngTutorialApp')
 
     function applyLightSkin() {
       $(document.body).removeClass('body-dark');
+      $('.dropdown-menu').removeClass('dropdown-menu-dark');
       $('.navbar').removeClass('navbar-inverse');
       $('.btn').removeClass('btn-inverse');
       $('.modal').removeClass('modal-dark');

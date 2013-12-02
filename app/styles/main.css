@@ -3,6 +3,12 @@ html, body {
   height: 100%;
 }
 
+body {
+  background-image: url(../images/ng-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .text-editor {
     min-height: 300px;
 }
@@ -11,6 +17,7 @@ html, body {
 	width: 100%;
 	min-height: 300px;
 	border: 1px solid #eee;
+  background-color: #fff;
 }
 
 .tut-result-frame-dark {
@@ -56,7 +63,8 @@ html, body {
 
 .preloader h1 {
   text-align: center;
-  margin-top: 30%;
+  font-family: times;
+  margin-top: 10%;
 }
 
 .light-skin {
@@ -73,18 +81,6 @@ html, body {
   border: 1px solid #aaa;
 }
 
-.body-dark {
-  background: rgba(26,26,26,1);
-  background: -moz-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(26,26,26,1)), color-stop(100%, rgba(0,0,0,1)));
-  background: -webkit-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
-  background: -o-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
-  background: -ms-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
-  background: linear-gradient(to bottom, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#000000', GradientType=0 );
-  color: #fff;
-}
-
 .modal-dark {
   background: rgba(26,26,26,1);
   background: -moz-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
@@ -97,9 +93,9 @@ html, body {
 }
 
 .modal-dark,
-.body-dark,
 .task-content-dark,
-.modal-dark .modal-footer {
+.modal-dark .modal-footer,
+.dropdown-menu-dark {
   background: rgba(26,26,26,1);
   background: -moz-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(26,26,26,1)), color-stop(100%, rgba(0,0,0,1)));
@@ -108,4 +104,27 @@ html, body {
   background: -ms-linear-gradient(top, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
   background: linear-gradient(to bottom, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#000000', GradientType=0 );
+}
+
+.body-dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.main-content {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.98;
+  height: 100%;
+}
+
+.dropdown-menu-dark {
+  color: #fff;
+}
+
+.dropdown-menu-dark a {
+  color: #ccc !important;
+}
+
+.dropdown-menu-dark:after {
+  visibility: hidden;
 }
