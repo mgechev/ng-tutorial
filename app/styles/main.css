@@ -208,9 +208,15 @@ body {
 #footer {
  background-color: #f5f5f5;
  text-align: center;
- padding: 5px;
+ padding-top: 10px;
+ padding: 10px;
 }
 
 .body-dark #footer {
+  color: #999;
+  background-color: #555;
+}
 
+.body-dark #footer a {
+ color: #fff;
 }
