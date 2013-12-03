@@ -1,0 +1,25 @@
+<style>
+.error-message {
+  color: red;
+}
+</style>
+<form novalidate ng-app>
+
+	<div class="error-message">The username is required</div>
+	<div class="error-message">The username should be more than 2 symbols</div>
+	<div class="error-message">The username should not be more than 15 symbols</div>
+	<label for="username">User</label>
+	<input type="text" name="username" ng-model="username" ng-minlength="3" ng-maxlength="15" required />
+	<br />
+
+	<div class="error-message">The email is not valid</div>
+	<label for="email">Email</label>
+	<input type="email" name="email" ng-model="email" />
+	<br />
+
+	<div class="error-message">The password is required</div>
+	<div class="error-message">The password should containing at least 8 characters, 1 number, 1 upper and 1 lowercase</div>
+	<label for="password">Password</label>
+	<input type="password" name="password" ng-model="password" required
+	ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/" />
+</form>

@@ -1,0 +1,13 @@
+<div ng-app>
+	<div ng-controller="ParentCtrl">
+
+		<input type="text" ng-model="parentValue">
+		<button>Send message to ChildCtrl</button>
+
+		<div ng-controller="ChildCtrl">
+			<input type="text" ng-model="childValue">
+			<button>Send message to ParentCtrl</button>
+		</div>
+
+	</div>
+</div>

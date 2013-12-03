@@ -30,5 +30,13 @@
 		"level": "intermediate",
 		"tags": ["directives", "scope", "isolated"],
 		"steps": ["bind-attribute", "bind-property", "bind-method"]
+	},
+	{
+		"id": "controllers-communication",
+		"title": "Communication between controllers",
+		"description": "In this tutorial you will see how the controllers in your page can communicate with each other",
+		"level": "intermediate",
+		"tags": ["scope", "controllers", "communication"],
+		"steps": ["invoke-methods", "send-messages"]
 	}
 ]

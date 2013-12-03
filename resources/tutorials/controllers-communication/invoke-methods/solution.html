@@ -1,0 +1,8 @@
+<div ng-app>
+	<div ng-controller="ParentCtrl">
+		<div ng-controller="ChildCtrl">
+			<input type="text" ng-model="value">
+			<button ng-click="delegateToParent(value)">Send message to ParentCtrl</button>
+		</div>
+	</div>
+</div>

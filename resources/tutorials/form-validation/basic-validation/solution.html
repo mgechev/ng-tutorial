@@ -1,0 +1,16 @@
+<style>
+input.ng-invalid {
+  background-color: #FFCFCF;
+}
+</style>
+<form novalidate ng-app>
+	<label for="username">User</label>
+	<input type="text" name="username" ng-model="username" ng-minlength="3" ng-maxlength="15" required />
+	<br />
+	<label for="email">Email</label>
+	<input type="email" name="email" ng-model="email" />
+	<br />
+	<label for="password">Password</label>
+	<input type="password" name="password" ng-model="password" required
+	 ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/" />
+</form>
