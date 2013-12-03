@@ -12,7 +12,7 @@ In order to point to AngularJS which part of the DOM should be compiled and used
 
 Congrats! Now you have running AngularJS application. To make sure your application works fine include the following content inside the `div` element you just created: `{{'foo'}}`. You should see the text `foo` in the result box without the brackets.
 
-What AngularJS does is traversing all ancestors of the root element you just pointed with `ng-app`. When AngularJS' compiler finds something it recognizes, it compiles it following the compiler's internal logic.
+What AngularJS does is traversing all successors of the root element you just pointed with `ng-app`. When AngularJS' compiler finds something it recognizes, it compiles it following the compiler's internal logic.
 
 I’m sure you noticed that `ng-app` is a custom attribute; it is not part of the HTML5 specification so the markup you just wrote won't be valid. In order to make it valid you can use the `data-` prefix. We will call these custom attributes **directives**. You can include directives inside your markup using - elements, classes, attributes, comments. But lets return to our bootstrap process.
 

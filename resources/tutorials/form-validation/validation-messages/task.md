@@ -1,6 +1,6 @@
 In this step of the tutorial we will add error messages. We will do this without writing any JavaScript again!
 
-When AngularJS finds form in your DOM tree and this form has a name it creates new property of the current scope which is named like the form. But thats not all! AngularJS also traverse the DOM subtree i.e. all form ancestors and for each named input it creates new property of the form property.
+When AngularJS finds form in your DOM tree and this form has a name it creates new property of the current scope which is named like the form. But thats not all! AngularJS also traverse the DOM subtree i.e. all form successors and for each named input it creates new property of the form property.
 
 It probably sounds a bit confising but it is not at all! Here is what basically happens when we add name (`myForm`) to our form:
 
