@@ -31,6 +31,9 @@
             <li>
                 <a href="javascript:void(0)" data-target="#select-tutorial" role="button" data-toggle="modal" href="#">Tutorials</a>
             </li>
+            <li>
+                <a href="javascript:void(0)" data-target="#help-dialog" role="button" data-toggle="modal" href="#">Help</a>
+            </li>
             <li><a href=""><div class="dark-skin" tut-toggle-skin="dark" ng-click="setSkin('dark')"></div></a></li>
             <li><a href=""><div class="light-skin" tut-toggle-skin="light" ng-click="setSkin('light')"></div></a></li>
         </ul>
@@ -77,6 +80,36 @@
             <button class="btn btn-primary" data-dismiss="modal" ng-click="viewSolution()">Yes</button>
           </div>
         </div>
+    </div>
+
+    <div id="help-dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Help</h3>
+      </div>
+      <div class="modal-body">
+        <h5>Selecting tutorial</h5>
+        <ul>
+            <li>To chose tutorial click on the "Tutorials" button in the navigation. You will see a dialog box, inside its content
+        you will be able to preview all different tutorials.</li>
+            <li>Each tutorial has name, description, level and tags. The easiest tutorials are with
+        one star for their level, the most complex tutorials are with three stars.</li>
+            <li>Using the search bar you can filter the tutorials.</li>
+            <li>When you chose a tutorial just click on it and its first step will be opened.</li>
+        </ul>
+
+        <h5>Solving tutorial</h5>
+        To complete the tutorial read the required steps in the bottom-left corner, write JavaScript in the top-left corner and HTML in the top-right one.
+        The result will be visualized in the bottom-right corner.
+
+        <h5>UI features</h5>
+        <ul>
+            <li>If you want to make any of the text boxes for HTML or JavaScript wider just click on its content.</li>
+            <li>In order to change the theme to dark use the black box, left from the "Help" button. To restore to the previous theme use the white box.</li>
+        </ul>
+        <br><br>
+        <strong>Have fun!</strong>
+      </div>
     </div>
 
     <div id="select-tutorial" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
