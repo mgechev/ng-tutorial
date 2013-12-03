@@ -29,6 +29,9 @@ angular.module('ngTutorialApp')
             editor.setValue(value);
           }
         });
+        $(window).resize(function () {
+          editor.resize();
+        });
         editor.setTheme('ace/theme/chrome');
         editor.getSession().setTabSize(2);
         editor.getSession().setUseSoftTabs(true);

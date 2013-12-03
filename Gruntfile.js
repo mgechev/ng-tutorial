@@ -232,6 +232,14 @@ module.exports = function (grunt) {
           ]
         }, {
           expand: true,
+          dest: '<%= yeoman.dist %>',
+          src: [
+            'api/**/*',
+            'resources/**/*',
+            'vendor/**/*'
+          ]
+        }, {
+          expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: [

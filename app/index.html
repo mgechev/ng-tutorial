@@ -6,7 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>ng-tutorial</title>
+    <link href="favicon.ico" rel="shortcut icon" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -35,32 +36,31 @@
         </ul>
       </div>
     </div>
-    <div class="bs-docs-grid" ng-controller="TutorialCtrl">
-      <div class="row-fluid show-grid editor-container">
-        <div class="span6">
+    <div class="bs-docs-grid main-wrapper" ng-controller="TutorialCtrl">
+      <div class="row-fluid show-grid inner-wrapper">
+        <div class="span6 inner-column">
             <div class="module-container">
-                <h3>JavaScript</h3>
+                <h3 tut-extend-editor class="section-header">JavaScript</h3>
                 <div tut-editor="javascript" tut-value="js"></div>
             </div>
             <div class="module-container">
-                <h3>Tutorial</h3>
+                <h3 class="section-header">Tutorial</h3>
                 <div id="step-content" class="span6 task-content" ng-bind-html="stepContent">
                 </div>
                 <div class="btn-group">
                     <button ng-class="( skin=='dark' ) ? 'btn-inverse' : ''" class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>
                 </div>
                 <button class="btn" ng-show="tutorial" data-target="#view-solution-confirm" role="button" data-toggle="modal">View Solution</button>
-
             </div>
         </div>
-        <div class="span6">
+        <div class="span6 inner-column">
             <div class="module-container">
-                <h3>HTML</h3>
+                <h3 tut-extend-editor class="section-header">HTML</h3>
                 <div tut-editor="html" tut-value="html"></div>
             </div>
             <div class="module-container">
-                <h3>Result</h3>
-                <div tut-result tut-result-js="js" tut-result-html="html"></div>
+                <h3 class="section-header">Result</h3>
+                <div class="frame-container" tut-result tut-result-js="js" tut-result-html="html"></div>
             </div>
         </div>
       </div>
@@ -122,28 +122,17 @@
       </div>
     </div>
 
-    <script src="bower_components/ace-builds/src-min/ace.js"></script>
-    <script src="bower_components/ace-builds/src-min/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
-    <script src="bower_components/ace-builds/src-min/mode-html.js" type="text/javascript" charset="utf-8"></script>
 
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-animate.min.js"></script>
+        <script src="bower_components/ace-builds/src-min/ace.js"></script>
+        <script src="bower_components/ace-builds/src-min/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/ace-builds/src-min/mode-html.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
         <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
         <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
         <script src="bower_components/showdown/compressed/showdown.js"></script>
         <!-- endbuild -->
 
@@ -160,6 +149,7 @@
         <script src="scripts/controllers/TutorialCtrl.js"></script>
         <script src="scripts/directives/tutToggleSkin.js"></script>
         <script src="scripts/services/LocalStorage.js"></script>
+        <script src="scripts/directives/tutExtendEditor.js"></script>
         <!-- endbuild -->
 </body>
 </html>
