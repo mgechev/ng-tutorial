@@ -204,3 +204,13 @@ body {
   user-select: none;
   margin: 0;
 }
+
+#footer {
+ background-color: #f5f5f5;
+ text-align: center;
+ padding: 5px;
+}
+
+.body-dark #footer {
+
+}

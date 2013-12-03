@@ -20,6 +20,10 @@
 </head>
   <body ng-app="ngTutorialApp" ng-controller="MainCtrl">
 
+    <a href="https://github.com/mgechev/ng-tutorial">
+        <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 200;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+    </a>
+
     <div class="preloader" ng-hide="ready">
         <h1>Loading...</h1>
     </div>
@@ -154,7 +158,11 @@
         </table>
       </div>
     </div>
-
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">By <a href="http://mgechev.com/">@mgechev</a></p>
+        </div>
+    </div>
 
         <script src="bower_components/ace-builds/src-min/ace.js"></script>
         <script src="bower_components/ace-builds/src-min/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
