@@ -10,12 +10,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/bootstrap.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bower_components/bootstrap-sass/bootstrap-responsive-2.3.2.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
   <body ng-app="ngTutorialApp" ng-controller="MainCtrl">
@@ -45,7 +44,7 @@
             </div>
             <div class="module-container">
                 <h3>Tutorial</h3>
-                <div id="step-content" class="task-content span6" ng-bind-html="stepContent">
+                <div id="step-content" class="span6 task-content" ng-bind-html="stepContent">
                 </div>
                 <div class="btn-group">
                     <button ng-class="( skin=='dark' ) ? 'btn-inverse' : ''" class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>

@@ -16,9 +16,17 @@
 		"steps": ["markup-controller", "controller-logic", "service"]
 	},
 	{
+		"id": "form-validation",
+		"title": "Form validation",
+		"description": "This tutorial introduces three types of form validation - basic validation, validation messages and custom validation",
+		"level": "intermediate",
+		"tags": ["directives", "validation", "forms"],
+		"steps": ["basic-validation", "validation-messages", "custom-validation"]
+	},
+	{
 		"id": "isolated-scope",
 		"title": "Isolated scope",
-		"description": "This tutorial introduce the concept of isolated scope",
+		"description": "This tutorial introduces the concept of isolated scope",
 		"level": "intermediate",
 		"tags": ["directives", "scope", "isolated"],
 		"steps": ["bind-attribute", "bind-property", "bind-method"]
