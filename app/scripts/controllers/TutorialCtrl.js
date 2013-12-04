@@ -34,6 +34,10 @@ angular.module('ngTutorialApp')
         var search = $location.search();
         search.step = step;
         $location.search(search);
+        $scope.$emit('ui.change-code', {
+          javascript: data.js,
+          html: data.html
+        });
       });
       currentStep = step;
     };
@@ -41,7 +45,10 @@ angular.module('ngTutorialApp')
     $scope.viewSolution = function () {
       StepsCollection.getStepSolution($scope.tutorial.id, currentStep)
       .then(function (data) {
-        $scope.$emit('ui.view-solution', data);
+        $scope.$emit('ui.change-code', {
+          javascript: data.js,
+          html: data.html
+        });
       });
     };
 

@@ -10,8 +10,8 @@ angular.module('ngTutorialApp')
       $scope.tutorials = data;
     });
 
-    $scope.$on('ui.view-solution', function (evnt, data) {
-      $scope.js = data.js;
+    $scope.$on('ui.change-code', function (evnt, data) {
+      $scope.js = data.javascript;
       $scope.html = data.html;
     });
 

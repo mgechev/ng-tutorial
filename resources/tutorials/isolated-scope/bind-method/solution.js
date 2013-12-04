@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller('MainCtrl', function ($scope) {
-  $scope.foo = function () {
+  $scope.alertMe = function () {
     alert('Foo');
   };
 });

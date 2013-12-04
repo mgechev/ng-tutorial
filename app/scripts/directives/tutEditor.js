@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ngTutorialApp')
-  .directive('tutEditor', function () {
+  .directive('tutEditor', function ($rootScope) {
     return {
       replace: true,
       template: '<div class="text-editor"></div>',
@@ -23,22 +23,24 @@ angular.module('ngTutorialApp')
             }
           }
         });
-        scope.$watch('value', function (value) {
-          var current = editor.getValue(value);
-          if (current !== value) {
-            editor.setValue(value);
-          }
-        });
-        $(window).resize(function () {
-          editor.resize();
+        //Required because the two-way binding breaks when there is a syntax error
+        //inside the iframe...
+        $rootScope.$on('ui.change-code', function (evnt, data) {
+          editor.setValue(data[attrs.tutEditor]);
         });
         editor.setTheme('ace/theme/chrome');
         editor.getSession().setTabSize(2);
         editor.getSession().setUseSoftTabs(true);
         var Mode = require('ace/mode/' + attrs.tutEditor).Mode;
         editor.getSession().setMode(new Mode());
+
+        function resizeHandler() {
+          editor.resize();
+        }
+        $(window).resize(resizeHandler);
         scope.$on('$destroy', function () {
           editor.destroy();
+          $(window).off('resizeHandler');
         });
       }
     };

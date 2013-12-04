@@ -7,7 +7,8 @@ angular.module('ngTutorialApp')
       link: function postLink(scope, element, attrs) {
         var extended = false,
             extendElement = element.closest('.module-container'),
-            placeHolder = $('<div />');
+            placeHolder = $('<div />'),
+            heightBackup;
 
         placeHolder.insertBefore(extendElement);
 
@@ -48,6 +49,10 @@ angular.module('ngTutorialApp')
           extendElement.css('top', extendElement.offset().top);
           placeHolder.width(extendElement.outerWidth(true));
           placeHolder.height(extendElement.outerHeight(true));
+          heightBackup = extendElement.css('height');
+          //Required because we will change the parent
+          //but we want to keep the height
+          extendElement.height(extendElement.height());
           extendElement.addClass('panel-extended');
           extendElement.appendTo(document.body);
           placeHolder.css('display', 'block');
@@ -59,6 +64,7 @@ angular.module('ngTutorialApp')
           extendElement.css('top', 0);
           extendElement.removeClass('panel-extended');
           extendElement.insertAfter(placeHolder);
+          extendElement.css('height', heightBackup);
         }
       }
     };
