@@ -33,6 +33,11 @@ angular.module('ngTutorialApp')
         editor.getSession().setUseSoftTabs(true);
         var Mode = require('ace/mode/' + attrs.tutEditor).Mode;
         editor.getSession().setMode(new Mode());
+        
+        if (attrs.tutEditor === 'html') {
+          ace.require("ace/ext/emmet");
+          editor.setOption("enableEmmet", true);
+        }
 
         function resizeHandler() {
           editor.resize();
