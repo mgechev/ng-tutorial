@@ -35,6 +35,7 @@ angular.module('ngTutorialApp')
         editor.getSession().setMode(new Mode());
         
         if (attrs.tutEditor === 'html') {
+          ace.require("ace/ext/emmet");
           editor.setOption("enableEmmet", true);
         }
 
