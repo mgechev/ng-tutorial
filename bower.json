@@ -9,7 +9,8 @@
     "bootstrap-sass": "~2.3.1",
     "es5-shim": "~2.0.8",
     "showdown": "~0.3.1",
-    "ace-builds": "~1.1.1"
+    "ace-builds": "~1.1.1",
+    "emmet-core": "git@github.com:nightwing/emmet-core.git"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",

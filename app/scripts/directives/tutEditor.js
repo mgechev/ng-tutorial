@@ -29,14 +29,13 @@ angular.module('ngTutorialApp')
           editor.setValue(data[attrs.tutEditor]);
         });
         editor.setTheme('ace/theme/chrome');
-        editor.getSession().setTabSize(2);
-        editor.getSession().setUseSoftTabs(true);
-        var Mode = require('ace/mode/' + attrs.tutEditor).Mode;
-        editor.getSession().setMode(new Mode());
+        editor.session.setTabSize(2);
+        editor.session.setUseSoftTabs(true);
+        editor.session.setMode('ace/mode/' + attrs.tutEditor);
         
         if (attrs.tutEditor === 'html') {
-          ace.require("ace/ext/emmet");
-          editor.setOption("enableEmmet", true);
+          ace.require('ace/ext/emmet');
+          editor.setOption('enableEmmet', true);
         }
 
         function resizeHandler() {
