@@ -59,7 +59,7 @@
             </div>
             <div class="module-container">
                 <h3 class="section-header">Tutorial</h3>
-                <div id="step-content" class="span6 task-content" ng-bind-html="stepContent">
+                <div id="step-content" class="span6 task-content" tut-bind="stepContent">
                 </div>
                 <div class="btn-group">
                     <button ng-class="( skin=='dark' ) ? 'btn-inverse' : ''" class="btn" ng-repeat="step in tutorial.steps" ng-bind="$index + 1" ng-click="gotoStep(step)"></button>
@@ -167,17 +167,17 @@
     </div>
     <div id="footer">
         <div class="container">
-            By <a href="http://mgechev.com/">@mgechev</a>
+            By <a href="http://mgechev.com/">@mgechev</a>, <a href="https://github.com/mgechev/ng-tutorial/graphs/contributors">contributors</a>.
         </div>
     </div>
 
-        <!-- build:js scripts/plugins.js -->
         <script src="bower_components/ace-builds/src-min/ace.js"></script>
         <script src="bower_components/ace-builds/src-min/ext-emmet.js"></script>
         <script src="bower_components/emmet-core/emmet.js"></script>
-
         <script src="bower_components/ace-builds/src-min/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
         <script src="bower_components/ace-builds/src-min/mode-html.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- build:js scripts/plugins.js -->
         <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-animate/angular-animate.min.js"></script>
@@ -201,6 +201,7 @@
         <script src="scripts/services/LocalStorage.js"></script>
         <script src="scripts/directives/tutExtendEditor.js"></script>
 
+        <script src="scripts/directives/tutBind.js"></script>
         <!-- endbuild -->
    <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
