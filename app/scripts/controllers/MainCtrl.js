@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('ngTutorialApp')
-  .controller('MainCtrl', function ($scope, LocalStorage, TutorialsCollection) {
+  .controller('MainCtrl', function ($scope, $rootScope, LocalStorage, TutorialsCollection) {
 
     TutorialsCollection.getTutorials()
     .then(function (data) {
       $scope.ready = true;
-      $scope.$broadcast('ui.ready');
+      $rootScope.$broadcast('ui.ready');
       $scope.tutorials = data;
     });
 

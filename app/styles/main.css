@@ -220,3 +220,32 @@ body {
 .body-dark #footer a {
  color: #fff;
 }
+
+.intro-screen {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+  visibility: hidden;
+  -webkit-transition: 0.4s opacity;
+  -moz-transition: 0.4s opacity;
+  -ms-transition: 0.4s opacity;
+  -o-transition: 0.4s opacity;
+  transition: 0.4s opacity;
+}
+
+.intro-screen-image {
+  background-image: url(../images/ng-tutorial-intro.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-screen-hidden {
+  opacity: 0;
+}

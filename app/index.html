@@ -20,6 +20,10 @@
 </head>
   <body ng-app="ngTutorialApp" ng-controller="MainCtrl">
 
+    <div tut-intro-screen class="intro-screen" id="intro-screen">
+        <div class="intro-screen-image"></div>
+    </div>
+
     <a ng-show="skin === 'light'" href="https://github.com/mgechev/ng-tutorial">
         <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 200;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
     </a>
@@ -200,6 +204,7 @@
         <script src="scripts/directives/tutToggleSkin.js"></script>
         <script src="scripts/services/LocalStorage.js"></script>
         <script src="scripts/directives/tutExtendEditor.js"></script>
+        <script src="scripts/directives/tutIntroScreen.js"></script>
 
         <script src="scripts/directives/tutBind.js"></script>
         <!-- endbuild -->
