@@ -39,6 +39,11 @@ The last step for adding new tutorial is to include meta information about it in
 }
 ```
 
+# Contributors
+
+[![mgechev](https://avatars.githubusercontent.com/u/455023?v=3&s=117)](https://github.com/mgechev)[![IliaSky](https://avatars.githubusercontent.com/u/2514449?v=3&s=117)](https://github.com/IliaSky)[![bradydowling](https://avatars.githubusercontent.com/u/6668371?v=3&s=117)](https://github.com/bradydowling)
+
+
 #License
 
 This software is distributed under the terms of the MIT license.
