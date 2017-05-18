@@ -2,7 +2,7 @@
 
 **ng-tutorial** is interactive tutorial for AngularJS. It contains tutorials in different topics labeled by their complexity (beginner, intermediate, advanced). Basically ng-tutorial gives you a task, which contains multiple steps and allows you to complete the task online. If you have difficulties of completing any of the steps for given task you can view its source code.
 
-#How to contribute
+# How to contribute
 
 Here are few ides for contributing:
 
@@ -12,7 +12,7 @@ Here are few ides for contributing:
 
 If you find a way to improve the application you can contribute by forking it and making a pull request with your changes.
 
-##Add Tutorial
+## Add Tutorial
 
 Currently the most necessary contribution is adding new tutorial. Adding new tutorial is quite simple task. All tutorials are located in `./resources/tutorials`. In order to create new tutorial you should create new folder with unique name in the tutorials folder. In this folder you can add all the steps and the requirements for completing them. For each step you should create different folder with custom name (its better to chose name which provides basic idea what the step is about). Inside the step you should have the following files:
 
@@ -44,6 +44,6 @@ The last step for adding new tutorial is to include meta information about it in
 [![mgechev](https://avatars.githubusercontent.com/u/455023?v=3&s=117)](https://github.com/mgechev)[![IliaSky](https://avatars.githubusercontent.com/u/2514449?v=3&s=117)](https://github.com/IliaSky)[![bradydowling](https://avatars.githubusercontent.com/u/6668371?v=3&s=117)](https://github.com/bradydowling)
 
 
-#License
+# License
 
 This software is distributed under the terms of the MIT license.
